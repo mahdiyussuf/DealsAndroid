@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+/**
+ * Activity for displaying the detail view of the product deal clicked from the list
+ */
 public class DealsDetailActivity extends AppCompatActivity implements View.OnClickListener{
 
     private String mPrice, mSalePrice, mDescription, mImage, mTitle;

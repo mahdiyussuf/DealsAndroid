@@ -20,12 +20,22 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * The main Activity houses the initial view of the app which shows the list of deals in a RecyclerView, and
+ * handles click events from each deal in the list which launches the DealsDetailActivity with the
+ * deal's information
+ */
 public class MainActivity extends AppCompatActivity implements DealListAdapter.OnDealClickListener {
 
+    //View Model for the MainActivity View
     DealsViewModel viewModel;
+    //Recycler view for the list of deals
     RecyclerView mDealsRecycler;
+    //Layout container which holds a loading animation
     LinearLayout mLoadingAnimation;
+    //Disposable container for holding onto subscriptions
     CompositeDisposable mCompositeDisposable = new CompositeDisposable();
+    //Member variable for the list of deals data
     List<Deals> mDeals;
 
     @Override
@@ -42,6 +52,11 @@ public class MainActivity extends AppCompatActivity implements DealListAdapter.O
         getData();
     }
 
+    /**
+     * Subscribes to an Observable showing when new data for the RecyclerView is ready.
+     * Observes on UI thread, but subscribes on a background thread. Displays data on information
+     * retrieval from Observable
+     */
     private void getData() {
         mCompositeDisposable.add(viewModel.dealsObservable()
                 .subscribeOn(Schedulers.io())
@@ -54,6 +69,11 @@ public class MainActivity extends AppCompatActivity implements DealListAdapter.O
                 }));
     }
 
+    /**
+     * Sets the RecyclerView's adapter with list of deals data, and then disables
+     * loading animation view
+     * @param rootObject : object containing response data from query for list of deals
+     */
     private void displayData(RootObject rootObject) {
         mDeals = rootObject.getData();
         mDeals = viewModel.reformatImageURLs(mDeals);
