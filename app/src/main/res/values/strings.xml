@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Deals</string>
+    <string name="button_add_list">add to list</string>
+    <string name="button_add_cart">add to cart</string>
+    <string name="text_reg">Reg:&#160;</string>
+    <string name="text_ship">ship</string>
+    <string name="text_or">or</string>
+
+</resources>

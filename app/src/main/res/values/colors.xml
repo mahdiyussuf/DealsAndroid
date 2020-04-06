@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ce102d</color>
+    <color name="colorPrimaryDark">#A00C23</color>
+    <color name="colorAccent">#ce102d</color>
+
+    <color name="gray">#CCCCCC</color>
+    <color name="gray_text">#434343</color>
+    <color name="red">#ce102d</color>
+    <color name="gray_button">#e0e0e0</color>
+    <color name="alt_gray">#b1b1b1</color>
+    <color name="white">#fef8f9</color>
+    <color name="black">#343030</color>
+</resources>

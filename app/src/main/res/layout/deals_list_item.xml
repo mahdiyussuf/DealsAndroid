@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_container"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/list_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars[10]" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toTopOf="@+id/list_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/list_image"
+        app:layout_constraintTop_toBottomOf="@+id/list_title">
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/list_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/list_image"
+        app:layout_constraintTop_toTopOf="@+id/list_image" />
+
+    <TextView
+        android:id="@+id/list_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="sans-serif-light"
+        android:textSize="23sp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/list_image"
+        app:layout_constraintStart_toEndOf="@+id/list_image" />
+
+    <TextView
+        android:id="@+id/list_aisle"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/red"
+        android:background="@drawable/transparent_circle_bordered"
+        app:layout_constraintBottom_toBottomOf="@+id/list_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/list_price" />
+
+    <TextView
+        android:id="@+id/textView_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/text_or"
+        android:textColor="@color/alt_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/list_price"
+        app:layout_constraintEnd_toStartOf="@+id/list_aisle"
+        app:layout_constraintTop_toTopOf="@+id/list_price" />
+
+    <TextView
+        android:id="@+id/textView_ship"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:text="@string/text_ship"
+        app:layout_constraintBottom_toBottomOf="@+id/list_price"
+        app:layout_constraintEnd_toStartOf="@+id/textView_or"
+        app:layout_constraintTop_toTopOf="@+id/list_price" />
+
+    <FrameLayout
+        android:background="@color/gray"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_image">
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
